@@ -1,8 +1,14 @@
-== v1.0.1 (Nov/16 2016 20:00 +0000 by DockerCI) ==
+== v1.1.0 (Nov/16 2016 18:09 -0200 by DockerCI) ==
+
+Features:
+
+  - removendo o turbolinks
+
+== v1.0.1 (Nov/16 2016 20:00 +0000 by Codeship) ==
 
 Changes:
 
-  - do not use tubolinks
+* do not use tubolinks
 
 == v1.0.0 (Nov/16 2016 17:58 +0000 by Michael Granados) ==
 
