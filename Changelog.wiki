@@ -1,0 +1,17 @@
+== v0.2.1 (Nov/16 2016 19:24 +0000 by DockerCI) ==
+
+Changes:
+
+  - better read of Gemfile
+
+== v0.2.0 (Nov/16 2016 18:20 +0000 by Codeship) ==
+
+Features:
+
+* organizacao do Gemfile
+
+== v0.1.0 (Nov/16 2016 15:37 +0000 by Michael Granados) ==
+
+Features:
+
+* rails application
