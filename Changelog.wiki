@@ -1,9 +1,15 @@
-== v0.2.1 (Nov/16 2016 19:57 +0000 by DockerCI) ==
+== v1.0.1 (Nov/16 2016 20:00 +0000 by DockerCI) ==
 
 Changes:
 
-  - install pry
-  - pry-nav to navigate on debug
+  - do not use tubolinks
+
+== v1.0.0 (Nov/16 2016 17:58 +0000 by Michael Granados) ==
+
+Changes:
+
+* install pry
+* pry-nav to navigate on debug
 
 == v0.2.0 (Nov/16 2016 18:20 +0000 by Codeship) ==
 
