@@ -1,8 +1,9 @@
-== v0.2.1 (Nov/16 2016 19:52 +0000 by DockerCI) ==
+== v0.2.1 (Nov/16 2016 19:57 +0000 by DockerCI) ==
 
 Changes:
 
   - install pry
+  - pry-nav to navigate on debug
 
 == v0.2.0 (Nov/16 2016 18:20 +0000 by Codeship) ==
 
