@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
 if ! git config --list | grep fetch | grep notes &>/dev/null; then
 	git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
