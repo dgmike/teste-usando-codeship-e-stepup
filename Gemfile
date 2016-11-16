@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.5'               # Build JSON APIs with ease. Read more: h
 gem 'jquery-rails'                     # Use jquery as the JavaScript library
 gem 'puma', '~> 3.0'                   # Use Puma as the app server
 gem 'sass-rails', '~> 5.0'             # Use SCSS for stylesheets
+gem 'slim-rails'                       # slim template language support
 gem 'sqlite3'                          # Use sqlite3 as the database for Active Record
 gem 'uglifier', '>= 1.3.0'             # Use Uglifier as compressor for JavaScript assets
 
