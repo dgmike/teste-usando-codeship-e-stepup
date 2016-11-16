@@ -1,8 +1,14 @@
-== v1.1.0 (Nov/16 2016 18:09 -0200 by DockerCI) ==
+== v1.2.0 (Nov/16 2016 18:18 -0200 by DockerCI) ==
 
 Features:
 
-  - removendo o turbolinks
+  - Adicao da gem slim
+
+== v1.1.0 (Nov/16 2016 20:09 +0000 by Codeship) ==
+
+Features:
+
+* removendo o turbolinks
 
 == v1.0.1 (Nov/16 2016 20:00 +0000 by Codeship) ==
 
