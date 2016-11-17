@@ -18,8 +18,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows doe
 
 group :development, :test do
   gem 'byebug', platform: :mri # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry'                    # 
-  gem 'pry-nav'
+  gem 'pry'                    # pry debug
+  gem 'pry-nav'                # navigate over pry debug
 end
 
 group :development do
