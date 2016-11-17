@@ -15,5 +15,5 @@ echo $CURRENT_VERSION | grep '+' &>/dev/null || { echo "Current release $CURRENT
 declare WHATS_NEW=$(stepup notes show)
 [ $(wc -l <<<"$WHATS_NEW") -ge 2 ] || { echo "No notes on $CURRENT_VERSION to increase version."; exit 0; }
 
-stepup version create --no-editor --steps || exit 1
+stepup version create --no-editor || exit 1
 
