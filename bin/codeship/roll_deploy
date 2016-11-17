@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# deploys app to amazon opswords using opsworks_rolling_deploy gem
+# 
+# usage:
+#
+# $ export DEPLOY_STACK="my-beautifull-stack"
+# $ export DEPLOY_APP="nice-app"
+#
+# $ ./roll_deploy "Rails App" --migrate
+# $ ./roll_deploy "Sidekiq"
+
+set -ex
+
+if [ ! `which opsworks_rolling_deploy` ]
+then
+    echo " * opsworks_rolling_deploy not installed"
+    exit 1
+fi
+
+if [ "${DEPLOY_STACK}" == "" ];
+then
+    echo " * you need do set DEPLOY_STACK environment"
+    exit 1
+fi
+
+if [ "${DEPLOY_APP}" == "" ];
+then
+    echo " * you need do set DEPLOY_APP environment"
+    exit 1
+fi
+
+declare LAYER=$1
+
+if [ "${LAYER}" == "" ]
+then
+    echo " * you must pass layer as first argument"
+    exit 1
+fi
+
+shift
+
+declare COMMAND_ARGS=""
+
+for i in "$@"
+do
+    case $i in
+        -m|--migrate)
+            declare COMMAND_ARGS='--command-args {"migrate":["true"]}'
+            shift
+            ;;
+    esac
+done
+
+opsworks_rolling_deploy deploy --stack "${DEPLOY_STACK}" --app "${DEPLOY_APP}" --layer "${LAYER}" ${COMMAND_ARGS}
+
