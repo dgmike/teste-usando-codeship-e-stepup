@@ -7,9 +7,9 @@ RSpec.describe HomeController, type: :controller do
     expect(assigns(:name)).to eq('Marcelo')
   end
 
-  # it 'must get index page with Michael' do
-  #   get :index, params: { name: 'Michael' }
-  #   expect(response).to be_success
-  #   expect(assigns(:name)).to eq('Michael')
-  # end
+  it 'must get index page with Michael' do
+    get :index, params: { name: 'Michael' }
+    expect(response).to be_success
+    expect(assigns(:name)).to eq('Michael')
+  end
 end
