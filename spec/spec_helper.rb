@@ -16,9 +16,14 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-RSpec.configure do |config|
+if ENV['COVERAGE_PATH']
   require "simplecov"
-  SimpleCov.start
+  SimpleCov.start 'rails'
+  SimpleCov.root "#{File.dirname(File.dirname(ENV['COVERAGE_PATH']))}/app"
+  SimpleCov.coverage_dir "../coverage/#{File.basename(ENV['COVERAGE_PATH'])}"
+end
+
+RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

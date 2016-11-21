@@ -18,15 +18,14 @@ gem 'turbolinks'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 group :development, :test do
+  gem 'listen'
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'byebug', platform: :mri # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'                    # pry debug
   gem 'pry-nav'                # navigate over pry debug
-  gem 'rspec'
-end
-
-group :test do
-  gem "simplecov"
-  gem "codeclimate-test-reporter", "~> 1.0.0"
+  gem 'rspec-rails', '~> 3.4'
+  gem 'rails-controller-testing'
 end
 
 group :development do
