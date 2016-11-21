@@ -1,5 +1,6 @@
 require 'json'
 require 'simplecov'
+require "codeclimate-test-reporter"
 
 coverage_dir = "#{ENV['PWD']}/coverage"
 filename = '.resultset.json'
@@ -26,5 +27,11 @@ merged_result = SimpleCov::ResultMerger.merged_result
 merged_result.command_name = 'RSpec'
 
 # Format merged result with html
-html_formatter = SimpleCov::Formatter::HTMLFormatter.new
+# html_formatter = SimpleCov::Formatter::HTMLFormatter.new
 # html_formatter.format(merged_result)
+
+# Post merged coverage result to codeclimate
+if ENV['CODECLIMATE_REPO_TOKEN']
+  codeclimate_formatter = CodeClimate::TestReporter::Formatter.new
+  codeclimate_formatter.format(merged_result)
+end
