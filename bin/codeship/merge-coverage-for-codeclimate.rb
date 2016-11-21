@@ -33,5 +33,5 @@ merged_result.command_name = 'RSpec'
 # Post merged coverage result to codeclimate
 if ENV['CODECLIMATE_REPO_TOKEN']
   codeclimate_formatter = CodeClimate::TestReporter::Formatter.new
-  codeclimate_formatter.format({'RSpec' => {'coverage' => results.original_result}})
+  codeclimate_formatter.format({'RSpec' => {'coverage' => merged_result.original_result}})
 end
