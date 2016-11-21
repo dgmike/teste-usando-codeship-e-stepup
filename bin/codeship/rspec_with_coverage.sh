@@ -14,7 +14,7 @@ done
 
 $BUNDLE ruby ${PWD}/bin/codeship/merge-coverage-for-codeclimate.rb
 
-cp coverage/merged/.resultset.json coverage/.resultset.json
+# cp coverage/merged/.resultset.json coverage/.resultset.json
 
-export CODECLIMATE_REPO_TOKEN=$CODECLIMATE_TOKEN
-$BUNDLE codeclimate-test-reporter
+# export CODECLIMATE_REPO_TOKEN=$CODECLIMATE_TOKEN
+# $BUNDLE codeclimate-test-reporter
