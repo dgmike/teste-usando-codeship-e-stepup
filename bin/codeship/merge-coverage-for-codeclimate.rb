@@ -10,8 +10,8 @@ filename = '.resultset.json'
 
 SimpleCov.start 'rails'
 SimpleCov.command_name 'RSpec'
-SimpleCov.root "#{ENV['PWD']}/app"
-SimpleCov.coverage_dir "../coverage/merged/"
+SimpleCov.root "#{ENV['PWD']}"
+SimpleCov.coverage_dir "coverage/merged/"
 
 files = Dir.glob(File.join(coverage_dir, "**/#{filename}"))
 
