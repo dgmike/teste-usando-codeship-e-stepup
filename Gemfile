@@ -19,8 +19,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows doe
 
 group :development, :test do
   gem 'byebug', platform: :mri # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry'                    # 
+  gem 'pry'                    #
   gem 'pry-nav'
+  gem 'rspec'
 end
 
 group :development do
@@ -30,4 +31,3 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0' #
   gem 'web-console'                       # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
 end
-
