@@ -13,6 +13,7 @@ gem 'sass-rails', '~> 5.0'             # Use SCSS for stylesheets
 gem 'slim-rails'                       # slim template language support
 gem 'sqlite3'                          # Use sqlite3 as the database for Active Record
 gem 'uglifier', '>= 1.3.0'             # Use Uglifier as compressor for JavaScript assets
+gem 'turbolinks'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
@@ -20,10 +21,15 @@ group :development, :test do
   gem 'byebug', platform: :mri # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'                    # pry debug
   gem 'pry-nav'                # navigate over pry debug
+  gem 'rspec'
+end
+
+group :test do
+  gem "simplecov"
+  gem "codeclimate-test-reporter", "~> 1.0.0"
 end
 
 group :development do
   # gem 'capistrano-rails'                # Use Capistrano for deployment
   gem 'web-console'                       # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
 end
-

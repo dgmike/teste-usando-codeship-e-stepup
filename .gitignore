@@ -19,3 +19,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# igore compiled assets
+/public/assets
+
+# ignore coverages
+/coverage

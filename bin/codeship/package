@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Generates a tgz package of project
+#
+# Outputs using default RAILS_ENV=production and OUTPUT=../${RAILS_ENV}-latest.tgz
+#
+# usage:
+# ./package ./staging-v5.4.2.tgz
+
+set -ex
+
+if [ "${RAILS_ENV}" == "" ]
+then
+    declare RAILS_ENV=production
+fi
+
+declare OUTPUT=$1
+
+if [ "${OUTPUT}" == "" ]
+then
+    OUTPUT="../${RAILS_ENV}-latest.tgz"
+fi
+
+declare SKIP_ELASTIC_CACHE=1
+
+# compile
+if [ "$(bundle exec rake -T i18n:js:exports)" ]
+then
+    bundle exec rake i18n:js:export
+fi
+
+bundle exec rake assets:precompile
+
+bundle exec rake tmp:clear
+
+# package
+tar -czv \
+    --exclude="./.git" \
+    --exclude="./coverage" \
+    --exclude="./spec" \
+    --exclude="./.bundle" \
+    --exclude="./deprecation*.txt" \
+    --exclude="./bin/codeship" \
+    --exclude="./test" \
+    -f $OUTPUT \
+    .
+
+echo "  *** Generated $OUTPUT with $(tar -tvf $OUTPUT | wc -l | awk '{print $1}') files and $(du -h $OUTPUT | awk '{print $1}')"
+

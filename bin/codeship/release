@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -ex
+
+if ! git config --list | grep fetch | grep notes &>/dev/null; then
+	git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
+	git fetch
+fi
+
+type stepup &>/dev/null || { echo >&2 "stepup is required!"; exit 1; }
+
+declare CURRENT_VERSION=$(stepup version show)
+echo $CURRENT_VERSION | grep '+' &>/dev/null || { echo "Current release $CURRENT_VERSION"; exit 0; }
+
+declare WHATS_NEW=$(stepup notes show)
+[ $(wc -l <<<"$WHATS_NEW") -ge 2 ] || { echo "No notes on $CURRENT_VERSION to increase version."; exit 0; }
+
+stepup version create --no-editor || exit 1
+
