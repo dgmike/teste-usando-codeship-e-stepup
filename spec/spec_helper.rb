@@ -19,10 +19,8 @@
 if ENV['COVERAGE_PATH']
   require "simplecov"
   SimpleCov.start 'rails'
-  puts 'SimpleCov.root', "#{File.dirname(File.dirname(ENV['COVERAGE_PATH']))}/app"
-  SimpleCov.root "#{File.dirname(File.dirname(ENV['COVERAGE_PATH']))}/app"
-  puts 'SimpleCov.coverage_dir', "../coverage/#{File.basename(ENV['COVERAGE_PATH'])}"
-  SimpleCov.coverage_dir "../coverage/#{File.basename(ENV['COVERAGE_PATH'])}"
+  # SimpleCov.root "#{File.dirname(File.dirname(ENV['COVERAGE_PATH']))}/app"
+  SimpleCov.coverage_dir "coverage/#{File.basename(ENV['COVERAGE_PATH'])}"
 end
 
 RSpec.configure do |config|
