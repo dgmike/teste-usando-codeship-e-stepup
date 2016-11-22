@@ -21,7 +21,7 @@ RSpec.describe HomeController, type: :controller do
 
   describe '#create' do
     it 'must set action' do
-      get :create
+      post :create
       expect(response).to be_success
       expect(assigns(:action)).to eq('calc')
       expect(assigns(:calc)).to eq(2)
