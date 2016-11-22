@@ -8,10 +8,11 @@ filename = '.resultset.json'
 # Merge coverage results from other nodes
 # .resultset.json is a hidden file and thus ignored by the glob
 
-SimpleCov.start 'rails'
-SimpleCov.command_name 'RSpec'
-SimpleCov.root "#{ENV['PWD']}"
-SimpleCov.coverage_dir "coverage/merged/"
+SimpleCov.configure do
+  command_name 'RSpec'
+  root Dir.getwd
+  coverage_dir 'coverage/merged'
+end
 
 files = Dir.glob(File.join(coverage_dir, "**/#{filename}"))
 
@@ -26,6 +27,8 @@ end
 merged_result = SimpleCov::ResultMerger.merged_result
 merged_result.command_name = 'RSpec'
 
+result = SimpleCov::Result.from_hash(['command', 4].join => a)
+
 # Format merged result with html
 # html_formatter = SimpleCov::Formatter::HTMLFormatter.new
 # html_formatter.format(merged_result)
@@ -34,7 +37,7 @@ merged_result.command_name = 'RSpec'
 if ENV['CODECLIMATE_TOKEN']
   ENV['CODECLIMATE_REPO_TOKEN'] = ENV['CODECLIMATE_TOKEN']
   puts 'formatted_results'
-  puts merged_result.to_json
+  puts merged_result
   codeclimate_formatter = CodeClimate::TestReporter::Formatter.new
   puts 'codeclimate_formatter.format'
   formatted_results = codeclimate_formatter.format({'RSpec' => {'coverage' => merged_result.original_result}})

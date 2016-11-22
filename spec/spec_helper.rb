@@ -18,9 +18,10 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 if ENV['COVERAGE_PATH']
   require "simplecov"
-  SimpleCov.start 'rails'
-  # SimpleCov.root "#{File.dirname(File.dirname(ENV['COVERAGE_PATH']))}/app"
-  SimpleCov.coverage_dir "coverage/#{File.basename(ENV['COVERAGE_PATH'])}"
+  SimpleCov.start :rails do
+    root Dir.getwd
+    coverage_dir "coverage/#{File.basename(ENV['COVERAGE_PATH'])}"
+  end
 end
 
 RSpec.configure do |config|
