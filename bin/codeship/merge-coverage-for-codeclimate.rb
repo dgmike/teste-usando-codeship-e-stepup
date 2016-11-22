@@ -18,7 +18,7 @@ files = Dir.glob(File.join(coverage_dir, "**/#{filename}"))
 
 files.each_with_index do |file, i|
   resultset = JSON.load(File.read(file))
-  resultset.each do |command_name, data|
+  resultset.each do |_command_name, data|
     result = SimpleCov::Result.from_hash(['command', i].join => data)
     SimpleCov::ResultMerger.store_result(result)
   end
