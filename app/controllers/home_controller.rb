@@ -15,4 +15,19 @@ class HomeController < ApplicationController
     end
     render plain: @name
   end
+
+  def create
+    @action = 'calc'
+    if param[:a]
+      a = param[:a]
+    else
+      a = 1
+    end
+    if param[:b]
+      b = param[:b]
+    else
+      b = 1
+    end
+    @calc = Calc.new.sum a, b
+  end
 end
