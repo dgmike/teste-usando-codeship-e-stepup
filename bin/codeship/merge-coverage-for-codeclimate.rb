@@ -3,7 +3,7 @@ require 'simplecov'
 require "codeclimate-test-reporter"
 
 coverage_dir = "#{ENV['PWD']}/coverage"
-filename = '.resultset.json'
+filename = '*-resultset.json'
 
 # Merge coverage results from other nodes
 # .resultset.json is a hidden file and thus ignored by the glob
