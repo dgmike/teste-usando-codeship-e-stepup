@@ -18,13 +18,13 @@ class HomeController < ApplicationController
 
   def create
     @action = 'calc'
-    if param[:a]
-      a = param[:a]
+    if params[:a]
+      a = params[:a]
     else
       a = 1
     end
-    if param[:b]
-      b = param[:b]
+    if params[:b]
+      b = params[:b]
     else
       b = 1
     end
