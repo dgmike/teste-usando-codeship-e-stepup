@@ -4,9 +4,15 @@ class HomeController < ApplicationController
     if 'Michael' == params[:name]
       @name = 'Michael'
     end
-    @name = 'Vegeta' if 'Vegeta' == params[:name]
-    @name = 'Goku' if 'Goku' == params[:name]
-    @name = 'Bulma' if 'Bulma' == params[:name]
+    if 'Vegeta' == params[:name]
+      @name = 'Vegeta'
+    end
+    if 'Goku' == params[:name]
+      @name = 'Goku'
+    end
+    if 'Bulma' == params[:name]
+      @name = 'Bulma'
+    end
     render plain: @name
   end
 end
