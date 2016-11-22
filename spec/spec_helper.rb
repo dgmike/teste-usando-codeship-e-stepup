@@ -21,6 +21,10 @@ if ENV['COVERAGE_PATH']
   SimpleCov.start :rails do
     root Dir.getwd
     coverage_dir "coverage/#{File.basename(ENV['COVERAGE_PATH'])}"
+    add_filter 'bin'
+    add_filter 'spec'
+    add_filter 'public'
+    add_filter 'db'
   end
 end
 
