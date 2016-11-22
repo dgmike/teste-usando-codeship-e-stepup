@@ -27,8 +27,6 @@ end
 merged_result = SimpleCov::ResultMerger.merged_result
 merged_result.command_name = 'RSpec'
 
-result = SimpleCov::Result.from_hash(['command', 4].join => a)
-
 # Format merged result with html
 # html_formatter = SimpleCov::Formatter::HTMLFormatter.new
 # html_formatter.format(merged_result)
