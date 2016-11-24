@@ -4,7 +4,6 @@ rvm:
   - 2.3.2
   - 2.3.3
 env:
-  - matrix:
-    - TESTFOLDER=spec/controllers
-    - TESTFOLDER=spec/models
+  - TESTFOLDER=spec/controllers
+  - TESTFOLDER=spec/models
 script: "bundle exec rspec $TESTFOLDER"
